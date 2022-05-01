@@ -5,19 +5,20 @@ class Location extends PIXI.Graphics {
 
 
     constructor(options) {
-        super();
+        super(options.geometry);
         this.interactive = true;
-        this.beginFill(0xD1B000);
-        this.drawCircle(0, 0, 25);
-        this.endFill();
         this.on('pointerdown', (e) => {
-            alert('location clicked');
+            alert('auto change');
+            e.stopPropagation();
         });
         this.x = options.x || 50;
         this.y = options.y || 100;
 
     }
 
+
 }
+
+
 
 export default Location
